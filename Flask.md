@@ -1,4 +1,4 @@
-#Flask
+# Flask
 
 #### What is Flsk?
 Flask is a micro web framework written in Python.The “micro” in microframework means 
@@ -14,7 +14,8 @@ from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world(): return 'Hello, World!'
+def hello_world():
+return 'Hello, World!'
 
 _from flask import Flask_ 
 Imported the flask Class
