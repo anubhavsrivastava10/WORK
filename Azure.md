@@ -3,7 +3,7 @@
 #### What is Cloud Computing?
 It is a platform that gives you access to the computing resources over the internet.
 As a user you go the Cloud Service provider and connect to cloud service provider then you have access to the computing resources such as storage, API's etc.
-For an Example take Netflix all of the videos or any other service like that in this what you are doing is you are accessing the data from there cloud which has all the videos or data.
+For an Example take Netflix all of the videos or any other service like that in this wha t you are doing is you are accessing the data from there cloud which has all the videos or data.
 
 #### What is Microsoft Azure?
 It is a cloud computing service for building, testing, deploying and managing applications and services through Microsoft managed data centers.
@@ -25,3 +25,13 @@ Nothing but a collection of Resources put together so that they can be managed a
 #### What is Azure Subscription ?
 Azure subscription is similar to a resource group in that it's a logical construct that groups together resource groups and their resources. It is also associated with the controls used by Azure Resource Manager.
 Azure Subscription provides the capability to create, deploy and run Azure Cloud Services (Virtual Machine, Containers, Azure SQL etc) in an Azure portal. if you don’t have an Azure subscription, you can’t use any of the Azure services
+
+#### Basic Idea
+ 
+ Every organisation works as a customer to Azure where you use
+ there resources and every customer has a id known as _tenant id_, also everyone has a directory where you can control manage all the user and you can search _azure active directory_ you can add a person in your directory (_Create_/_Add_) i.e multiple users. In every subscription there is a linked resource group and there can be a multiple subscription which can be assigned to a multiple user you can give access to that particular subscription in which you decide a role of the user (but the person has to be in the same AD). Resource group is collection of resources connected logically and then give access to the resource group but not to subscription.
+
+
+##### My queries!!
+ 1. A person not on Azure can access your subscription if you add him?
+ 1. For python it is only showing linux ?(Web App) Does that make any difference from how i use it on Linux?
