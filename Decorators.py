@@ -138,12 +138,3 @@ sub_logger(20, 10)     # 10
 # closures are when a function remembers the environment it was created it,
 # specifically the variables around it
 
-# It allows us to take advantage of First-Class function.
-
-'Decorators'
-
-'''
-A decorator is just a function that takes another function as an argument, 
-adds some kind of functionality, and then returns another function.
-'''
-
