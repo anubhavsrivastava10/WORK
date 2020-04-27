@@ -31,7 +31,3 @@ Azure Subscription provides the capability to create, deploy and run Azure Cloud
  Every organisation works as a customer to Azure where you use
  there resources and every customer has a id known as _tenant id_, also everyone has a directory where you can control manage all the user and you can search _azure active directory_ you can add a person in your directory (_Create_/_Add_) i.e multiple users. In every subscription there is a linked resource group and there can be a multiple subscription which can be assigned to a multiple user you can give access to that particular subscription in which you decide a role of the user (but the person has to be in the same AD). Resource group is collection of resources connected logically and then give access to the resource group but not to subscription.
 
-
-##### My queries!!
- 1. A person not on Azure can access your subscription if you add him?
- 1. For python it is only showing linux ?(Web App) Does that make any difference from how i use it on Linux?
