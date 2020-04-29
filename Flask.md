@@ -1,6 +1,6 @@
 # Flask
 
-#### What is Flsk?
+#### What is Flask?
 Flask is a micro web framework written in Python.The “micro” in microframework means 
 Flask aims to keep the core simple but extensible. Flask won’t make many decisions for 
 you, such as what database to use. Those decisions that it does make, such as what 
@@ -21,10 +21,10 @@ _from flask import Flask_
 Imported the flask Class
 
 _app = Flask(__name__)_
-Create an instance of this class.If you are using a single module use(__name__) becasue depending on if its started as an application or imported as a module with different name.(__xxxx__).This is needed so that flask knows where to look for template,static file etc.
+Create an instance of this class.If you are using a single module use(__name__) becasue depending on if its started as an application or imported as a module with different name.(__xxxx__).This is needed so that Flask knows where to look for template,static file etc.
 
 _@app.route('/')_
-It is used to give the give the URL to a particular function so that the flask knows which URL is going to trigger what function.
+It is used to give the give the URL to a particular function so that the Flask knows which URL is going to trigger what function.
 
 _def hello_world(): return 'Hello, World!'_
 The function is given a name which is also used to generate URLs for that particular function, and returns the message we want to display in the user’s browser.
@@ -36,10 +36,10 @@ To run a Flask file
    venv\Scripts\activate
 1. set the file name
    set FLASK_APP = file_name.py
-1. run the flask file
+1. run the Flask file
    python -m flask run
 
-#### Debug a flask file
+#### Debug a Flask file
 
 set FLASK_ENV = development
 flask run
