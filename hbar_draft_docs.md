@@ -1,16 +1,9 @@
 # Creating a Horizontal Bar Chart
 
 ```python
-import matplotlib as mlp
 mpl.use("Agg")
-from matplotlib.figure import Figure
 ```
-
-_Matplotlib_ : is a comprehensive library for creating static, animated, and interactive visualizations in Python.
-
-_mpl.use("Agg")_ : This is the default backend of the Matplotlib library which renders the plots. This is done to set the backend explicitly as on some python interpreter code runs as a script natively.
-
-_Matplotlib.figure_ : is imported instead of pyplot because when using Matplotlib in a web server pyplot tends to memory leak if the data is large thus using "figure" will create a buffer memory for every time we need to plot.
+_mpl.use("Agg")_ : This is the default backend of the Matplotlib library which renders the plots. To access the figure as an RGBA(Red Green Blue Alpha color model) buffer, convert it to an array, and pass it to Pillow(PIL library this adds support for opening, maipulationg and saving many different image file format) for rendering.
 
 ```python
 def custom_barh_plot(records, label_field, value_field):
@@ -46,7 +39,6 @@ def custom_barh_plot(records, label_field, value_field):
 ```
 
 In the function **custom_barh_plot** there are three parameters -:
-
 1. records - refers to the whole data dictionary.
 2. label_feild - refers to the name key in the dictionary.
 3. value_feild - refers to the value key in the dictionary.
@@ -56,7 +48,7 @@ labels = [x[label_field] for x in records]
 values = [x[value_field] for x in records]
 ```
 
-In these two lines we have created a list of labels in which there are all the values in the label_feild key and in the values there are all the values of the value_feild.
+In these two lines we have created a list of labels in which there are all the values in the label_feild key and in the values in which there are all the values of the value_feild.
 
 ```python
     fig = Figure(
@@ -67,7 +59,6 @@ In these two lines we have created a list of labels in which there are all the v
         frameon=True,
     )
 ```
-
 _figsize=(7, 3)_ : This would create an inch-by-inch image, in this it would be (7x3) in inches that would be (560, 240) pixels.
 
 _edgecolor_ : Is used to set the figure patch edge color here it is set to "#ACACAC" i.e RGB(172, 172, 172).
@@ -84,11 +75,11 @@ ax.get_xaxis().set_visible(False)
 ax.invert_yaxis()
 ```
 
-_fig.gca()_ : Where GCA stands for Get Current Axis which is used to set different properties on your axis and is used to get the know the currently selected axes from the available axes.
+_fig.gca()_ : Where GCA stands for Get Current Axis.
 
 _ax.get_xaxis().set_visible(False)_ : Returns the X-Axis instance and has the visibility of the axis to be False.
 
-_ax.invert_yaxis()_ : This would start the Y-Axis value from max value to the min value.
+_ax.invert_yaxis()_ : This goes from max to min instead of going from min to max in the indexing of the y-axis.
 
 ```python
 ax.spines["top"].set_visible(False)
@@ -110,29 +101,23 @@ for y_tick in ax.get_yticklabels():
     y_tick.set_fontsize(12)
 ```
 
-Get's the Y-tick labels ( tick values are the locations along the y-axis where the tick marks appear) as a list of Text instances with the font style of 'Segoe UI' and the font size being 12.
+Set instances with the font style of 'Segoe UI' and the font size being 12.
 
 ```python
 for i, v in enumerate(values):
     ax.text(v, i, " " + str(v), va="center")
 ```
-
 It displays the value of the bar on each bar keeping the align center.
-
 ```python
 return fig
 ```
-
 At last you can return the figure.
 
 **_Calling the Function_**
-
 ```python
 custom_barh_plot(data, "name", "value")
 ```
-
 **_Sample data for Testing_**
-
 ```python
 data = [
         {'name' : 'Marketing', 'value' : 4500000},
@@ -143,8 +128,53 @@ data = [
         {'name' :'MRO','value':740000}
     ]
 ```
-
 **_Output of the Sample Data_**
-
-
 ![alt text](https://github.com/anubhavsrivastava10/WORK/blob/master/Hbar_Output.png?raw=true "Hbar_Sample_Output")
+
+##### My Code
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+fig, ax = plt.subplots()
+
+#def bar_plot():
+    data = request.json["data"]
+    data1 = pd.DataFrame.from_records(data)
+    y_pos = np.arange(len(data1['name']))
+    ax.barh(y_pos, data1['value'],color=('#4673C4'))
+    ax.set_yticks(y_pos)
+    ax.set_yticklabels(data1['name'])
+    rect_labels=[]
+    for bar in data1['value']:
+        rect_labels.append(bar)
+        
+    plt.show()
+```
+
+_plt.subplots()_ : is a function that returns a tuple containing a figure and axes object(s) thus when we use it it unpacks itself into variable fig and ax. You can use fig as if you want to save the image as an image file later and ax is used as plotting method. It is mainly used for plotting multiple graphs in a single frame.
+
+_data = request.json["data"]_ : Requesting of data from an API in a json format in a list called data.
+
+_data1 = pd.DataFrame.from_records(data)_ : converted that data in the dataframe.
+
+_y_pos = np.arange(len(data1['name']))_ : Created a range of numbers from Zero to the total number of elements present in the dataframe.
+
+_ax.barh(y_pos, data1['value'],color=('#4673C4'))_ : Created a horizontal bar graph with the specific color of the bar and y_pos represents the co-ordinated of the bar in the y axis and data1['value'] is the width of the bar.
+
+_ax.set_yticks(y_pos)_ : Sets y-ticks with the list of ticks. This is returning a list of address.
+
+_ax.set_yticklabels(data1['name'])_ : Alloted the names to the list of labels on the y-axis. This also returns the list of address.
+
+```python
+rect_labels=[]
+for bar in data1['value']:
+    rect_labels.append(bar)
+```
+
+Storing all the value in a list so that it can be used to label the bar on top of each bar.
+
+_plt.show()_ : this will display all the figures but what it does is it diplays the address of the graph at which it is present.
+
