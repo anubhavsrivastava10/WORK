@@ -69,9 +69,13 @@ In these two lines we have created a list of labels in which there are all the v
 ```
 
 _figsize=(7, 3)_ : This would create an inch-by-inch image, in this it would be (7x3) in inches that would be (560, 240) pixels.
+
 _edgecolor_ : Is used to set the figure patch edge color here it is set to "#ACACAC" i.e RGB(172, 172, 172).
+
 _linewidth_ : This is used to set the line width of the figure patch i.e line width of the frame.
+
 _tight_layout_ : Automatically adjust subplot parameters to give specified padding.
+
 _frameon_ : by default it is True and used for drawing the figure background patch.
 
 ```python
@@ -81,7 +85,9 @@ ax.invert_yaxis()
 ```
 
 _fig.gca()_ : Where GCA stands for Get Current Axis which is used to set different properties on your axis and is used to get the know the currently selected axes from the available axes.
+
 _ax.get_xaxis().set_visible(False)_ : Returns the X-Axis instance and has the visibility of the axis to be False.
+
 _ax.invert_yaxis()_ : This would start the Y-Axis value from max value to the min value.
 
 ```python
