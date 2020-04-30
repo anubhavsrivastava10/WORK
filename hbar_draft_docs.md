@@ -140,7 +140,7 @@ import numpy as np
 
 fig, ax = plt.subplots()
 
-#def bar_plot():
+def bar_plot():
     data = request.json["data"]
     data1 = pd.DataFrame.from_records(data)
     y_pos = np.arange(len(data1['name']))
