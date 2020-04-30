@@ -54,7 +54,7 @@ labels = [x[label_field] for x in records]
 values = [x[value_field] for x in records]
 ```
 
-In these two lines we have created a list of labels in which there are all the values in the label_feild key and in the values in which there are all the values of the value_feild.
+In these two lines we have created a list of labels in which there are all the values in the label_feild key and in the values there are all the values of the value_feild.
 
 ```python
     fig = Figure(
