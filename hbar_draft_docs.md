@@ -145,4 +145,6 @@ data = [
 ```
 
 **_Output of the Sample Data_**
+
+
 ![alt text](https://github.com/anubhavsrivastava10/WORK/blob/master/Hbar_Output.png?raw=true "Hbar_Sample_Output")
