@@ -7,7 +7,9 @@ from matplotlib.figure import Figure
 ```
 
 _Matplotlib_ : is a comprehensive library for creating static, animated, and interactive visualizations in Python.
+
 _mpl.use("Agg")_ : This is the default backend of the Matplotlib library which renders the plots. This is done to set the backend explicitly as on some python interpreter code runs as a script natively.
+
 _Matplotlib.figure_ : is imported instead of pyplot because when using Matplotlib in a web server pyplot tends to memory leak if the data is large thus using "figure" will create a buffer memory for every time we need to plot.
 
 ```python
