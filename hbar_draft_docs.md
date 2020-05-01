@@ -3,7 +3,8 @@
 ```python
 mpl.use("Agg")
 ```
-_mpl.use("Agg")_ : This is the default backend of the Matplotlib library which renders the plots. To access the figure as an RGBA(Red Green Blue Alpha color model) buffer, convert it to an array, and pass it to Pillow(PIL library this adds support for opening, maipulationg and saving many different image file format) for rendering.
+
+_mpl.use("Agg")_ : The Anti-Grain Geometry (Agg) rendering engine, capable of rendering high-quality images. This is the canonical render for the user interface it uses its Agg C++ library to make a pixel image of the figure. Render is the the thing that actually does the drawing from the canvas (i.e the place where drawing goes). All user interface except macosx can be used with Agg rendering.
 
 ```python
 def custom_barh_plot(records, label_field, value_field):
@@ -39,6 +40,7 @@ def custom_barh_plot(records, label_field, value_field):
 ```
 
 In the function **custom_barh_plot** there are three parameters -:
+
 1. records - refers to the whole data dictionary.
 2. label_feild - refers to the name key in the dictionary.
 3. value_feild - refers to the value key in the dictionary.
@@ -59,6 +61,7 @@ In these two lines we have created a list of labels in which there are all the v
         frameon=True,
     )
 ```
+
 _figsize=(7, 3)_ : This would create an inch-by-inch image, in this it would be (7x3) in inches that would be (560, 240) pixels.
 
 _edgecolor_ : Is used to set the figure patch edge color here it is set to "#ACACAC" i.e RGB(172, 172, 172).
@@ -75,11 +78,9 @@ ax.get_xaxis().set_visible(False)
 ax.invert_yaxis()
 ```
 
-_fig.gca()_ : Where GCA stands for Get Current Axis.
-
+_fig.gca()_ : Where GCA stands for Get Current Axis which is used to set different properties on your axis and is used to get the know the currently selected axes from the available axes.
 _ax.get_xaxis().set_visible(False)_ : Returns the X-Axis instance and has the visibility of the axis to be False.
-
-_ax.invert_yaxis()_ : This goes from max to min instead of going from min to max in the indexing of the y-axis.
+_ax.invert_yaxis()_ : This would start the Y-Axis value from max value to the min value.
 
 ```python
 ax.spines["top"].set_visible(False)
@@ -101,23 +102,29 @@ for y_tick in ax.get_yticklabels():
     y_tick.set_fontsize(12)
 ```
 
-Set instances with the font style of 'Segoe UI' and the font size being 12.
+Get's the Y-tick labels ( tick values are the locations along the y-axis where the tick marks appear) as a list of Text instances with the font style of 'Segoe UI' and the font size being 12. These are the text to be appeared on the Y-axis.
 
 ```python
 for i, v in enumerate(values):
     ax.text(v, i, " " + str(v), va="center")
 ```
+
 It displays the value of the bar on each bar keeping the align center.
+
 ```python
 return fig
 ```
+
 At last you can return the figure.
 
 **_Calling the Function_**
+
 ```python
 custom_barh_plot(data, "name", "value")
 ```
+
 **_Sample data for Testing_**
+
 ```python
 data = [
         {'name' : 'Marketing', 'value' : 4500000},
@@ -128,6 +135,7 @@ data = [
         {'name' :'MRO','value':740000}
     ]
 ```
+
 **_Output of the Sample Data_**
 ![alt text](https://github.com/anubhavsrivastava10/WORK/blob/master/Hbar_Output.png?raw=true "Hbar_Sample_Output")
 
