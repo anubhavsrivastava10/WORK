@@ -199,6 +199,7 @@ _plt.show()_ : this will display all the figures but what it does is it diplays 
 1. No data will be shown in my case of the graph on the top of each bar.
 1. My code returns the address of the graph at which it is present rather than the graph itself.
 1. I have also used plt.show() instead of returning the figure.
+1. I have also not included the frame of the whole figure while in the main app.py you have make a function for framing i.e framed_visual which returns the base64 value of the whole image.
 
 ##### What is ```__init__.py ``` used for ?
 
