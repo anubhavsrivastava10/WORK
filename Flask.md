@@ -10,24 +10,29 @@ code and documentation where they are used.
 
 #### Creating a Hello world Program
 
+```python
 from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
 return 'Hello, World!'
+```
 
-_from flask import Flask_ 
-Imported the flask Class
+```from flask import Flask```
+Creates an instance of the Flask class imported from flask package.
 
-_app = Flask(__name__)_
-Create an instance of this class.If you are using a single module use(__name__) becasue depending on if its started as an application or imported as a module with different name.(__xxxx__).This is needed so that Flask knows where to look for template,static file etc.
+```app = Flask(__name__)```
+Flask uses the location of the module passed here as a starting point when it needs to associate resource. Passing ```__name__``` will almost always going to configure flask in a correct way.
 
-_@app.route('/')_
-It is used to give the give the URL to a particular function so that the Flask knows which URL is going to trigger what function.
+```@app.route('/')```
+Route are the different URL that the application implements. When a web browser is going to request the URL flask is going to invoke this function and pass the return value of it back to the browser as a response.
 
-_def hello_world(): return 'Hello, World!'_
-The function is given a name which is also used to generate URLs for that particular function, and returns the message we want to display in the user’s browser.
+```python
+def hello_world(): 
+   return 'Hello, World!'
+```
+This is the function that that is going to be invoked when the browser is going to request the route URL and as the response to the URL the function is going to return the string 'Hello, World!' which can be seen on the browser as a response. 
 
 #### Run a FLASK file
 
@@ -41,8 +46,10 @@ To run a Flask file
 
 #### Debug a Flask file
 
+```python
 set FLASK_ENV = development
 flask run
+```
 
 1. It activates the debugger
 1. It activates the automatic reloader
