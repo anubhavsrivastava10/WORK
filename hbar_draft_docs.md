@@ -186,3 +186,26 @@ Storing all the value in a list so that it can be used to label the bar on top o
 
 _plt.show()_ : this will display all the figures but what it does is it diplays the address of the graph at which it is present.
 
+#### Difference in both the codes
+
+1. I have also used pyplot instead of figure which will show the data leak incase the data is large and the correct graph wont be shown.
+1. I haven't declared any rendering process for the graph.
+1. While my code has created a dataframe and the correct code has made a list of labels and values seperately.
+1. I haven't declared the figure potential parameters such as edgecolor( my edge color wil be default black), figsize( so my graph will vary from different number of inputs), linewidth( which is also default and will point to 1).
+1. My x-axis will also be visible as it's visibility is default that is True.
+1. My y-axis is also not inverted which means that the first value will be plotted at nearest to the x-axis which was supposed to be inverted in this case.
+1. I have not removed the border of the graph that is it should only have the left border but it is yet default i.e all borders are being shown.
+1. Haven't assigned the font-style and the font-size of the text that is supposed to be present on the y-axis of the graph.
+1. No data will be shown in my case of the graph on the top of each bar.
+1. My code returns the address of the graph at which it is present rather than the graph itself.
+1. I have also used plt.show() instead of returning the figure.
+
+##### What is __init__.py used for ?
+
+Each path in the python directory must have a specified file called __init__.py This indicated that the directory it contains is a package, so it can be imported the same way a module can be imported.
+1. Present in each python directory.
+1. Can be empty.
+1. It can be imported as the same way as module.
+1. This is executed implicitly.
+
+A python package is simply an organized collection of python module. A python module is a single python file.
