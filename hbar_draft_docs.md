@@ -200,9 +200,9 @@ _plt.show()_ : this will display all the figures but what it does is it diplays 
 1. My code returns the address of the graph at which it is present rather than the graph itself.
 1. I have also used plt.show() instead of returning the figure.
 
-##### What is __init__.py used for ?
+##### What is ```python __init__.py ``` used for ?
 
-Each path in the python directory must have a specified file called '__init__'.py This indicated that the directory it contains is a package, so it can be imported the same way a module can be imported.
+Each path in the python directory must have a specified file called ``` python __init__.py ``` .This indicated that the directory it contains is a package, so it can be imported the same way a module can be imported.
 1. Present in each python directory.
 1. Can be empty.
 1. It can be imported as the same way as module.
