@@ -202,7 +202,7 @@ _plt.show()_ : this will display all the figures but what it does is it diplays 
 
 ##### What is __init__.py used for ?
 
-Each path in the python directory must have a specified file called __init__.py This indicated that the directory it contains is a package, so it can be imported the same way a module can be imported.
+Each path in the python directory must have a specified file called '__init__'.py This indicated that the directory it contains is a package, so it can be imported the same way a module can be imported.
 1. Present in each python directory.
 1. Can be empty.
 1. It can be imported as the same way as module.
