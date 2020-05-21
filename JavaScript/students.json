@@ -1,0 +1,17 @@
+// It is used to represent data.
+// Stands for JavaScript Object Notation.
+// Generally used in API to carry light weight information.
+
+[
+    {
+        "name": "abc",
+        "Age": 20,
+        "height": 170
+    }
+    {
+        "name": "abc",
+        "Age": 20,
+        "height": 170
+    }
+]
+
